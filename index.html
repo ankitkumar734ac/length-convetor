@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	 <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+<table>
+	<tr><th colspan="2">Convert Lengths</th></tr>
+	<tr>
+		<td><input onkeyup="call1(this.value)" id="f1" type="text" name=""></td>
+		<td><input onkeyup="call2(this.value)" id="f2" type="text" name=""></td>
+	</tr>
+	<tr>
+		<td>
+			<select id='select1' onchange="clearf(this)">
+				<option>Kilometer</option>
+				<option>Centimeter</option>
+				<option>Meter</option>
+				<option>Millimeter</option>
+			</select>
+		</td>
+		<td>
+			<select id='select2' onchange="clearf(this)">
+				<option>Kilometer</option>
+				<option>Centimeter</option>
+				<option>Meter</option>
+				<option>Millimeter</option>
+			</select>
+		</td>
+	</tr>
+</table>
+<script type="">
+	function call1(element){
+		let f2='f2';
+		convert(element,f2);
+	}
+	function call2(element){
+		let f2='f1';
+		convert(element,f2);
+	}
+	function clearf(ele){
+		console.log('free',ele)
+		document.getElementById('f1').value='';
+		document.getElementById('f2').value='';
+	}
+	function convert(element,f2) {
+		
+		let select1=document.getElementById('select1').value;
+		let select2=document.getElementById('select2').value;
+		console.log(select1,select2);
+
+		if(select1=='Kilometer' && select2=='Kilometer'){
+			document.getElementById(f2).value=element;
+		}else
+		if(select1=='Kilometer' && select2=='Centimeter'){
+			document.getElementById(f2).value=element*100000;
+		}else
+		if(select1=='Kilometer' && select2=='Meter'){
+			document.getElementById(f2).value=element*1000;
+		}else
+		if(select1=='Kilometer' && select2=='Millimeter'){
+			document.getElementById(f2).value=element*1000000;
+		}else
+		if(select1=='Centimeter' && select2=='Kilometer'){
+			document.getElementById(f2).value=element/100000;
+		}else
+		if(select1=='Centimeter' && select2=='Centimeter'){
+			document.getElementById(f2).value=element;
+		}else
+		if(select1=='Centimeter' && select2=='Meter'){
+			document.getElementById(f2).value=element/100;
+		}else
+		if(select1=='Centimeter' && select2=='Millimeter'){
+			document.getElementById(f2).value=element*10;
+		}else
+		if(select1=='Meter' && select2=='Kilometer'){
+			document.getElementById(f2).value=element/1000;
+		}else
+		if(select1=='Meter' && select2=='Centimeter'){
+			document.getElementById(f2).value=element/0.01;
+		}else
+		if(select1=='Meter' && select2=='Meter'){
+			document.getElementById(f2).value=element;
+		}else
+		if(select1=='Meter' && select2=='Millimeter'){
+			document.getElementById(f2).value=element*1000;
+		}else
+		if(select1=='Millimeter' && select2=='Kilometer'){
+			document.getElementById(f2).value=element/1000000;
+		}else
+		if(select1=='Millimeter' && select2=='Centimeter'){
+			document.getElementById(f2).value=element/10;
+		}else
+		if(select1=='Millimeter' && select2=='Meter'){
+			document.getElementById(f2).value=element/1000;
+		}else
+		if(select1=='Millimeter' && select2=='Millimeter'){
+			document.getElementById(f2).value=element;
+		}
+
+
+
+	}
+</script>
+</body>
+</html>
